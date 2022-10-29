@@ -1,0 +1,64 @@
+version: ">= 0.10, < 0.17"
+
+formatter: markdown table
+
+header-from: documentation/header.md
+
+footer-from: documentation/footer.md
+
+recursive:
+  enabled: false
+  path: module
+
+sections:
+  show:
+    - all
+
+content: |-
+  {{ include "./documentation/about.md" }}
+  ---
+  {{ include "./documentation/features.md" }}
+  ---
+  {{ include "./documentation/usage.md" }}
+  ---
+  {{ include "./documentation/design.md" }}
+  ---
+  {{ include "./documentation/maintenence.md" }}
+  ---
+  <iframe src="./documentation/rover/index.html">
+  </iframe>
+  
+  ## Inputs
+  {{ .Inputs }}
+
+  ## Resources Created
+  {{ range .Module.Resources }}
+  - {{ .GetMode }}.{{ .Spec }} ({{ .Position.Filename }}{{ .Position.Line }})
+  {{- end }}
+
+  {{ .Outputs }}
+
+  {{ .Providers }}
+
+output:
+  file: GENERATED-README.md
+  mode: inject
+  template: |-
+    <!-- BEGIN_TF_DOCS -->
+    {{ .Content }}
+    <!-- END_TF_DOCS -->
+
+sort:
+  enabled: true
+  by: required
+
+output-values:
+  enabled: false
+  from: ""
+
+settings:
+  indent: 2
+  escape: false
+  default: false
+  required: false
+  type: true

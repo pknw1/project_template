@@ -1,0 +1,1600 @@
+(function () {
+  function t(t) {
+    var n;
+    var s;
+    var c = t[0];
+    var i = t[1];
+    var l = t[2];
+    var u = 0;
+    for (var f = []; u < c.length; u++) {
+      s = c[u];
+      if (Object.prototype.hasOwnProperty.call(o, s) && o[s]) {
+        f.push(o[s][0]);
+      }
+      o[s] = 0;
+    }
+    for (n in i) {
+      if (Object.prototype.hasOwnProperty.call(i, n)) {
+        e[n] = i[n];
+      }
+    }
+    if (d) {
+      d(t);
+    }
+    while (f.length) {
+      f.shift()();
+    }
+    a.push.apply(a, l || []);
+    return r();
+  }
+  function r() {
+    var e;
+    for (var t = 0; t < a.length; t++) {
+      var r = a[t];
+      var n = true;
+      for (var c = 1; c < r.length; c++) {
+        var i = r[c];
+        if (o[i] !== 0) {
+          n = false;
+        }
+      }
+      if (n) {
+        a.splice(t--, 1);
+        e = s((s.s = r[0]));
+      }
+    }
+    return e;
+  }
+  function s(t) {
+    if (n[t]) {
+      return n[t].exports;
+    }
+    var r = (n[t] = { i: t, l: false, exports: {} });
+    e[t].call(r.exports, r, r.exports, s);
+    r.l = true;
+    return r.exports;
+  }
+  var e = {
+    0: function (e, t, r) {
+      e.exports = r('56d7');
+    },
+    '081a': function (e, t, r) {
+      'use strict';
+      r('aed1');
+    },
+    '08f7': function (e, t, r) {},
+    '133a': function (e, t, r) {
+      e.exports = './img/kubernetes.36fdbc6b.png';
+    },
+    '1b55': function (e, t, r) {},
+    '32cb': function (e, t, r) {
+      e.exports = './img/arrow-down-circle.27fdf30c.svg';
+    },
+    4294: function (e, t, r) {},
+    '46da': function (e, t, r) {},
+    '56d7': function (e, t, r) {
+      'use strict';
+      r.r(t);
+      r('e260');
+      r('e6cf');
+      r('cca6');
+      r('a79d');
+      var n = r('2b0e');
+      var o = function () {
+        var e = this;
+        var t = e.$createElement;
+        var r = e._self._c || t;
+        return r(
+          'div',
+          { attrs: { id: 'app' } },
+          [
+            r('main-nav', { on: { saveGraph: e.saveGraph } }),
+            r('div', { staticClass: 'row' }, [
+              r(
+                'div',
+                { staticClass: 'col col-4-lg' },
+                [
+                  e._m(0),
+                  r('resource-detail', { attrs: { resourceID: e.resourceID } }),
+                ],
+                1
+              ),
+              r(
+                'div',
+                { staticClass: 'col col-8-lg' },
+                [
+                  r('graph', {
+                    ref: 'filegraph',
+                    attrs: { displayGraph: e.displayGraph },
+                    on: { getNode: e.selectResource },
+                  }),
+                  r('explorer', { on: { selectResource: e.selectResource } }),
+                ],
+                1
+              ),
+            ]),
+          ],
+          1
+        );
+      };
+      var a = [
+        function () {
+          var e = this;
+          var t = e.$createElement;
+          var r = e._self._c || t;
+          return r('fieldset', [
+            r('legend', [e._v('Legend')]),
+            r('b', [e._v('PKPKPK')]),
+            r('hr'),
+            r('p', [
+              e._v(
+                " Click or hover on node to isolate that node's connections. Click on the light pknw1pknw1 to unselect. "
+              ),
+            ]),
+            r('p', [
+              e._v(
+                ' All resources that the node depends on are represented by a solid line. All resources that depend on the node are represented by a dashed line. '
+              ),
+            ]),
+            r('hr'),
+            r('b', [e._v('Resource')]),
+            r('hr'),
+            r('div', { staticClass: 'node create' }, [
+              e._v('Resource - Create'),
+            ]),
+            r('div', { staticClass: 'node delete' }, [
+              e._v('Resource - Delete'),
+            ]),
+            r('div', { staticClass: 'node replace' }, [
+              e._v('Resource - Replace'),
+            ]),
+            r('div', { staticClass: 'node update' }, [
+              e._v('Resource - Update'),
+            ]),
+            r('div', { staticClass: 'node no-op' }, [
+              e._v('Resource - No Operation'),
+            ]),
+            r('hr'),
+            r('b', [e._v('Other items')]),
+            r('hr'),
+            r('div', { staticClass: 'node variable' }, [e._v('Variable')]),
+            r('div', { staticClass: 'node output' }, [e._v('Output')]),
+            r('div', { staticClass: 'node data' }, [e._v('Data')]),
+            r('div', { staticClass: 'node module' }, [e._v('Module')]),
+            r('div', { staticClass: 'node locals' }, [e._v('Local')]),
+            r('hr'),
+          ]);
+        },
+      ];
+      var s = function () {
+        var e = this;
+        var t = e.$createElement;
+        var r = e._self._c || t;
+        return r('nav', { staticClass: 'nav' }, [
+          e._m(0),
+          r('div', { staticClass: 'nav-right' }, [
+            r(
+              'a',
+              {
+                staticClass: 'button outline',
+                attrs: { id: 'saveGraph' },
+                on: {
+                  click: function (t) {
+                    return e.saveGraph();
+                  },
+                },
+              },
+              [e._v('Save Graph')]
+            ),
+          ]),
+        ]);
+      };
+      var c = [
+        function () {
+          var e = this;
+          var t = e.$createElement;
+          var r = e._self._c || t;
+          return r('div', { staticClass: 'nav-left' }, [
+            r(
+              'a',
+              {
+                staticClass: 'title',
+                attrs: { href: 'https://github.com/im2nguyen/rover' },
+              },
+              [r('h2', [e._v('Rover - Terraform Visualizer')])]
+            ),
+          ]);
+        },
+      ];
+      var i = {
+        name: 'MainNav',
+        data: function () {
+          return { colorMode: '\u2600\uFE0F', graph: true };
+        },
+        methods: {
+          switchMode: function () {
+            var e = document.body.classList;
+            if (e.contains('dark')) {
+              this.colorMode = '\u2600\uFE0F';
+              e.remove('dark');
+            } else {
+              this.colorMode = '\u{1F319}';
+              e.add('dark');
+            }
+            localStorage.colorMode = this.colorMode;
+          },
+          saveGraph: function () {
+            this.$emit('saveGraph', true);
+          },
+        },
+        mounted: function () {},
+      };
+      var l = i;
+      r('bdb6');
+      var d = r('2877');
+      var u = Object(d.a)(l, s, c, false, null, 'bfab64d6', null);
+      var f = u.exports;
+      var p = function () {
+        var e = this;
+        var t = e.$createElement;
+        var r = e._self._c || t;
+        return r('fieldset', { attrs: { id: 'resource-details' } }, [
+          r('legend', [e._v('Details')]),
+          r('div', { staticClass: 'resource-detail' }, [
+            e.resourceID
+              ? r('div', [
+                  r('dd', { staticClass: 'key' }, [
+                    e._v(e._s(e.primitiveType)),
+                  ]),
+                  e.resourceChange.action
+                    ? r(
+                        'span',
+                        { staticClass: 'tag is-small resource-action' },
+                        [e._v(e._s(e.resourceChange.action))]
+                      )
+                    : e._e(),
+                  r('dt', { staticClass: 'value resource-id' }, [
+                    e._v(' ' + e._s(e.resource.id) + ' '),
+                    r(
+                      'button',
+                      {
+                        ref: 'rid',
+                        staticClass: 'copy-button',
+                        on: {
+                          click: function (t) {
+                            return e.copyText(e.resource.id, 'rid');
+                          },
+                        },
+                      },
+                      [e._v(' Copy ')]
+                    ),
+                  ]),
+                  r('nav', { staticClass: 'tabs is-full' }, [
+                    r(
+                      'a',
+                      {
+                        class: { active: e.curTab === 'config' },
+                        on: {
+                          click: function (t) {
+                            return e.selectTab('config');
+                          },
+                        },
+                      },
+                      [e._v('Config')]
+                    ),
+                    r(
+                      'a',
+                      {
+                        class: {
+                          active: e.curTab === 'current',
+                          disabled: e.hasNoState,
+                        },
+                        on: {
+                          click: function (t) {
+                            return e.selectTab('current');
+                          },
+                        },
+                      },
+                      [e._v('Current State')]
+                    ),
+                    r(
+                      'a',
+                      {
+                        class: {
+                          active: e.curTab === 'proposed',
+                          disabled: e.hasNoState,
+                        },
+                        on: {
+                          click: function (t) {
+                            return e.selectTab('proposed');
+                          },
+                        },
+                      },
+                      [e._v('Proposed State')]
+                    ),
+                  ]),
+                  e.curTab === 'config'
+                    ? r(
+                        'div',
+                        { staticClass: 'tab-container' },
+                        [
+                          e.resourceConfig.isChild ==
+                          'rover-for-each-child-resource-true'
+                            ? r('span', { staticClass: 'is-child-resource' }, [
+                                e._v('Please check parent resource'),
+                              ])
+                            : e._l(e.resourceConfig, function (t, n) {
+                                return r('div', { key: n }, [
+                                  r('dd', { staticClass: 'key' }, [
+                                    e._v(e._s(n)),
+                                  ]),
+                                  r('dt', { staticClass: 'value' }, [
+                                    r('span', [
+                                      e._v(e._s(e.getConfigValue(t))),
+                                    ]),
+                                    r(
+                                      'button',
+                                      {
+                                        ref: e.resource.id + '-' + n,
+                                        refInFor: true,
+                                        staticClass: 'copy-button',
+                                        on: {
+                                          click: function (r) {
+                                            e.copyText(
+                                              e.getConfigValue(t),
+                                              e.resource.id + '-' + n
+                                            );
+                                          },
+                                        },
+                                      },
+                                      [e._v(' Copy ')]
+                                    ),
+                                  ]),
+                                ]);
+                              }),
+                        ],
+                        2
+                      )
+                    : e._e(),
+                  e.curTab === 'current'
+                    ? r('div', { staticClass: 'tab-container' }, [
+                        e.resourceChange.before
+                          ? r(
+                              'span',
+                              e._l(e.resourceChange.before, function (t, n) {
+                                return r('div', { key: n }, [
+                                  r('dd', { staticClass: 'key' }, [
+                                    e._v(e._s(n)),
+                                  ]),
+                                  r('dt', { staticClass: 'value' }, [
+                                    e._v(' ' + e._s(e.getBeforeValue(t)) + ' '),
+                                    r(
+                                      'button',
+                                      {
+                                        ref: e.resource.id + '-' + n,
+                                        refInFor: true,
+                                        staticClass: 'copy-button',
+                                        on: {
+                                          click: function (r) {
+                                            e.copyText(
+                                              e.getBeforeValue(t),
+                                              e.resource.id + '-' + n
+                                            );
+                                          },
+                                        },
+                                      },
+                                      [e._v(' Copy ')]
+                                    ),
+                                  ]),
+                                ]);
+                              }),
+                              0
+                            )
+                          : r('span', [
+                              e._v("Resource doesn't currently exist."),
+                            ]),
+                      ])
+                    : e._e(),
+                  e.curTab === 'proposed'
+                    ? r(
+                        'div',
+                        { staticClass: 'tab-container' },
+                        e._l(e.resourceChange.after, function (t, n) {
+                          return r('div', { key: n }, [
+                            r('dd', { staticClass: 'key' }, [e._v(e._s(n))]),
+                            t
+                              ? r(
+                                  'dt',
+                                  {
+                                    staticClass: 'value',
+                                    class: { 'unknown-value': t.unknown },
+                                  },
+                                  [
+                                    e._v(
+                                      ' ' +
+                                        e._s(t.unknown ? 'Value Unknown' : t) +
+                                        ' '
+                                    ),
+                                    r(
+                                      'button',
+                                      {
+                                        ref: e.resource.id + '-' + n,
+                                        refInFor: true,
+                                        staticClass: 'copy-button',
+                                        on: {
+                                          click: function (r) {
+                                            e.copyText(
+                                              e.getBeforeValue(t),
+                                              e.resource.id + '-' + n
+                                            );
+                                          },
+                                        },
+                                      },
+                                      [e._v(' Copy ')]
+                                    ),
+                                  ]
+                                )
+                              : r('dt', { staticClass: 'value' }, [
+                                  e._v('null'),
+                                ]),
+                          ]);
+                        }),
+                        0
+                      )
+                    : e._e(),
+                ])
+              : r('div', [
+                  r('span', [e._v('Please select a resource on your right.')]),
+                ]),
+          ]),
+        ]);
+      };
+      var h = [];
+      r('a15b');
+      r('ac1f');
+      r('5319');
+      r('caad');
+      r('2532');
+      r('d3b7');
+      r('159b');
+      r('b64b');
+      r('2ca0');
+      r('1276');
+      r('fb6a');
+      r('99af');
+      r('466d');
+      var g = r('bc3a');
+      var v = r.n(g);
+      var b = r('f904');
+      var m = r.n(b);
+      var y = {
+        name: 'ResourceDetail',
+        props: { resourceID: String },
+        data: function () {
+          return { curTab: 'config', overview: {} };
+        },
+        methods: {
+          selectTab: function (e) {
+            if (!this.hasNoState) {
+              this.curTab = e;
+            }
+          },
+          copyText: function (e, t) {
+            m()(e, { onCopy: this.updateCopyText(t) });
+          },
+          updateCopyText: function (e) {
+            var t = this;
+            if (Array.isArray(this.$refs[e])) {
+              this.$refs[e][0].innerText = 'Copied';
+              setTimeout(function () {
+                t.$refs[e][0].innerText = 'Copy';
+              }, 1e3);
+            } else {
+              this.$refs[e].innerText = 'Copied';
+              setTimeout(function () {
+                t.$refs[e].innerText = 'Copy';
+              }, 1e3);
+            }
+          },
+          getConfigValue: function (e) {
+            if (e.references) {
+              return e.references.join(', ');
+            } else if (e.constant_value) {
+              return e.constant_value;
+            } else {
+              return e || 'null';
+            }
+          },
+          getBeforeValue: function (e) {
+            return e || 'null';
+          },
+          getAfterValue: function (e) {
+            return e || 'null';
+          },
+          getResourceConfig: function (e, t, r) {
+            var n;
+            var o;
+            var a;
+            var s;
+            var c;
+            var i;
+            var l;
+            var d =
+              (n = t.states[e]) !== null && n !== void 0 && n.config_id
+                ? (o = t.states[e]) === null || o === void 0
+                  ? void 0
+                  : o.config_id
+                : e.replace(/\[[^[\]]*\]/g, '');
+            if (r) {
+              return { isChild: 'rover-for-each-child-resource-true' };
+            } else if (
+              (l =
+                (a = t.configs[d]) === null || a === void 0
+                  ? void 0
+                  : a.variable_config) !== void 0 ||
+              (l =
+                (s = t.configs[d]) === null || s === void 0
+                  ? void 0
+                  : s.output_config) !== void 0 ||
+              (l =
+                (c = t.configs[d]) === null || c === void 0
+                  ? void 0
+                  : c.module_config) !== void 0 ||
+              (l =
+                (i = t.configs[d]) === null || i === void 0
+                  ? void 0
+                  : i.resource_config) !== void 0
+            ) {
+              return l;
+            } else {
+              return {};
+            }
+          },
+          getResourceChange: function (e, t) {
+            var r = {};
+            if (e.includes('var.')) {
+              return (r = {});
+            }
+            if (e.includes('output.')) {
+              if (t.states[e] && t.states[e].change) {
+                var n = t.states[e].change;
+                if (n.actions) {
+                  r.action = n.actions.length > 1 ? 'replace' : n.actions[0];
+                }
+                r.before = n.before ? n.before : null;
+                r.after = n.after ? n.after : {};
+                if (typeof r.before === 'string') {
+                  r.before = { value: r.before };
+                }
+                if (typeof r.after === 'string') {
+                  r.after = { value: r.after };
+                }
+                if (n.after_unknown) {
+                  r.after.value = { unknown: true };
+                }
+                return r;
+              }
+              return (r = {});
+            }
+            if (t.states[e] && t.states[e].change) {
+              var o = t.states[e].change;
+              if (o.actions) {
+                r.action = o.actions.length > 1 ? 'replace' : o.actions[0];
+              }
+              r.before = o.before ? o.before : {};
+              r.after = o.after ? o.after : {};
+              if (o.after_unknown) {
+                Object.keys(o.after_unknown).forEach(function (e) {
+                  r.after[e] = { unknown: true };
+                });
+              }
+            }
+            return r;
+          },
+        },
+        computed: {
+          resource: function () {
+            var e = '';
+            e = this.resourceID.startsWith('Resources/')
+              ? this.resourceID.split('/').join('.')
+              : this.resourceID.split('/').slice(-2).join('.');
+            var t = e.split('.');
+            var r = t.length - 1;
+            var n = t.join('.');
+            if (this.resourceID.startsWith('Resources/')) {
+              n = t.slice(1).join('.');
+            }
+            return {
+              fileName: ''.concat(t[0], '.').concat(t[1]),
+              id: n,
+              resource_type: t[r - 1],
+              resource_name: t[r],
+            };
+          },
+          primitiveType: function () {
+            switch (this.resource.resource_type) {
+              case 'output':
+              case 'var':
+              case 'local':
+                return this.resource.resource_type;
+              default:
+                if (this.resource.id.startsWith('data.')) {
+                  return 'data';
+                } else {
+                  return 'resource';
+                }
+            }
+          },
+          isChild: function () {
+            return this.resource.id.match(/\[[^[\]]*\]$/g) != null;
+          },
+          hasNoState: function () {
+            return this.resource.id.includes('var.');
+          },
+          resourceConfig: function () {
+            return this.getResourceConfig(
+              this.resource.id,
+              this.overview,
+              this.isChild
+            );
+          },
+          resourceChange: function () {
+            return this.getResourceChange(this.resource.id, this.overview);
+          },
+        },
+        watch: {
+          resourceID: function (e) {
+            if (e.includes('var.')) {
+              this.curTab = 'config';
+            }
+          },
+        },
+        mounted: function () {
+          var e = this;
+          if (typeof rso === 'undefined') {
+            v.a.get('/api/rso').then(function (t) {
+              e.overview = t.data;
+            });
+          } else {
+            this.overview = rso;
+          }
+        },
+      };
+      var _ = y;
+      r('081a');
+      var C = Object(d.a)(_, p, h, false, null, '4e3cd299', null);
+      var w = C.exports;
+      var x = function () {
+        var e = this;
+        var t = e.$createElement;
+        var r = e._self._c || t;
+        return r('transition', { attrs: { name: 'graph' } }, [
+          r(
+            'fieldset',
+            [
+              r('legend', [e._v('Graph')]),
+              r('cytoscape', {
+                ref: 'cy',
+                attrs: { config: e.config, preConfig: e.preConfig },
+              }),
+            ],
+            1
+          ),
+        ]);
+      };
+      var k = [];
+      r('d81d');
+      r('8a79');
+      r('4de4');
+      var R = r('21a6');
+      var T = r('8df5');
+      var I = r.n(T);
+      var j = r('2701');
+      var O = r.n(j);
+      var $ = r('cc5f');
+      var N = r.n($);
+      var P = {
+        autounselectify: true,
+        style: [
+          {
+            selector: 'node',
+            style: {
+              label: 'data(label)',
+              width: '500px',
+              'font-family': 'Avenir, Helvetica, Arial, sans-serif',
+              'font-size': '2em',
+            },
+          },
+          {
+            selector: 'edge',
+            css: {
+              'curve-style': 'taxi',
+              'line-fill': 'linear-gradient',
+              'line-gradient-stop-colors': 'data(gradient)',
+              'line-dash-offset': 24,
+              width: 10,
+            },
+          },
+          {
+            selector: '.basename',
+            style: {
+              padding: '200px',
+              'text-margin-y': 75,
+              'font-weight': 'bold',
+              shape: 'roundrectangle',
+              'min-height': '400px',
+              'border-width': 2,
+              'border-color': 'white',
+              'background-color': '#f4ecff',
+            },
+          },
+          {
+            selector: '.fname',
+            style: {
+              padding: '100px',
+              'text-margin-y': 75,
+              'font-weight': 'bold',
+              shape: 'roundrectangle',
+              'border-width': 1,
+              'border-color': 'lightgrey',
+              'background-color': 'white',
+            },
+          },
+          {
+            selector: '.provider',
+            style: {
+              'text-valign': 'center',
+              'text-halign': 'center',
+              padding: '1em',
+              shape: 'roundrectangle',
+              'border-width': 0,
+              color: 'white',
+              'background-color': 'black',
+            },
+          },
+          {
+            selector: '.module',
+            style: {
+              padding: '100px',
+              'font-weight': 'bold',
+              'text-margin-y': 60,
+              shape: 'roundrectangle',
+              color: '#8450ba',
+              'border-width': 10,
+              'border-color': '#8450ba',
+              'background-color': 'white',
+            },
+          },
+          {
+            selector: '.data-type',
+            style: {
+              padding: '10%',
+              width: 'label',
+              'font-weight': 'bold',
+              'text-background-color': 'white',
+              'text-background-opacity': 1,
+              'text-background-padding': '2em',
+              'text-margin-y': 15,
+              shape: 'roundrectangle',
+              'border-width': '5px',
+              'border-color': 'black',
+              'background-color': 'white',
+            },
+          },
+          {
+            selector: '.data-name',
+            css: {
+              'background-color': '#ffecec',
+              color: 'black',
+              'font-weight': 'bold',
+              'text-valign': 'center',
+              'text-halign': 'center',
+              padding: '1.5em',
+              shape: 'roundrectangle',
+              'border-opacity': 1,
+              'border-width': 5,
+              'border-color': '#dc477d',
+              label: 'data(label)',
+            },
+          },
+          {
+            selector: '.output',
+            css: {
+              'background-color': '#fff7e0',
+              color: 'black',
+              'font-weight': 'bold',
+              'text-valign': 'center',
+              'text-halign': 'center',
+              padding: '1.5em',
+              shape: 'roundrectangle',
+              'border-opacity': 1,
+              'border-width': 5,
+              'border-color': '#ffc107',
+              label: 'data(label)',
+            },
+          },
+          {
+            selector: '.variable',
+            css: {
+              'background-color': '#e1f0ff',
+              color: 'black',
+              'font-weight': 'bold',
+              'text-valign': 'center',
+              'text-halign': 'center',
+              padding: '1.5em',
+              shape: 'roundrectangle',
+              'border-opacity': 1,
+              'border-width': 5,
+              'border-color': '#1d7ada',
+              label: 'data(label)',
+            },
+          },
+          {
+            selector: '.locals',
+            css: {
+              'background-color': 'black',
+              color: 'white',
+              'font-weight': 'bold',
+              'text-valign': 'center',
+              'text-halign': 'center',
+              padding: '1.5em',
+              shape: 'roundrectangle',
+              'border-opacity': 1,
+              'border-width': 5,
+              'border-color': 'black',
+              label: 'data(label)',
+            },
+          },
+          {
+            selector: '.resource-type',
+            style: {
+              padding: '10%',
+              width: 'label',
+              'font-weight': 'bold',
+              'text-background-color': 'white',
+              'text-background-opacity': 1,
+              'text-background-padding': '2em',
+              'text-margin-y': 15,
+              shape: 'roundrectangle',
+              'border-width': '5px',
+              'border-color': 'black',
+              'background-color': 'white',
+            },
+          },
+          {
+            selector: '.resource-parent',
+            style: {
+              padding: '10%',
+              width: 'label',
+              'font-weight': 'bold',
+              'text-background-color': 'white',
+              'text-background-opacity': 1,
+              'text-background-padding': '2em',
+              'text-margin-y': 15,
+              shape: 'roundrectangle',
+              'border-width': '5px',
+              'border-color': 'black',
+              'background-color': 'white',
+            },
+          },
+          {
+            selector: '.resource-name',
+            css: {
+              'text-valign': 'center',
+              'text-halign': 'center',
+              padding: '1.5em',
+              shape: 'roundrectangle',
+              'border-opacity': 0,
+              color: 'white',
+              'background-color': '#8450ba',
+              'text-wrap': 'ellipsis',
+              'text-max-width': 500,
+            },
+          },
+          {
+            selector: '.create',
+            css: {
+              'background-color': '#28a745',
+              color: 'white',
+              'font-weight': 'bold',
+            },
+          },
+          {
+            selector: '.delete',
+            css: {
+              'background-color': '#e40707',
+              color: 'white',
+              'font-weight': 'bold',
+            },
+          },
+          {
+            selector: '.update',
+            css: {
+              'background-color': '#1d7ada',
+              color: 'white',
+              'font-weight': 'bold',
+            },
+          },
+          {
+            selector: '.replace',
+            css: {
+              'background-color': '#ffc107',
+              color: 'black',
+              'font-weight': 'bold',
+            },
+          },
+          {
+            selector: '.no-op',
+            css: {
+              color: 'black',
+              'border-opacity': 1,
+              'font-weight': 'bold',
+              'border-width': '5px',
+              'border-color': 'lightgray',
+              'background-color': 'white',
+            },
+          },
+          { selector: '.invisible', css: { opacity: '0' } },
+          { selector: '.semitransp', css: { opacity: '0.4' } },
+          { selector: 'edge.semitransp', css: { opacity: '0' } },
+          { selector: '.visible', css: { opacity: '1' } },
+          {
+            selector: '.dashed',
+            css: { 'line-style': 'dashed', 'line-dash-pattern': [20, 20] },
+          },
+        ],
+      };
+      var G = {
+        name: 'Graph',
+        data: function () {
+          return { selectedNode: '', config: P, graph: {} };
+        },
+        methods: {
+          preConfig: function (e) {
+            e.use(I.a);
+            e.use(O.a);
+            if (typeof e('core', 'nodeHtmlLabel') !== 'function') {
+              e.use(N.a);
+            }
+          },
+          renderGraph: function () {
+            var e = this;
+            var t = this.$refs.cy.instance;
+            var r = t.elements();
+            var n = this.graph.nodes.map(function (e) {
+              return e.data.id;
+            });
+            t.remove(r);
+            this.graph.nodes.forEach(function (e) {
+              t.add(e);
+            });
+            this.graph.edges.forEach(function (e) {
+              if (
+                !e.data.id.includes('-variable') &&
+                !e.data.id.includes('-output')
+              ) {
+                var r = e.data.target;
+                while (!n.includes(r)) {
+                  r = r.split('.');
+                  if (r.length < 2) {
+                    console.warn(
+                      'edge target',
+                      e.data.target,
+                      'not found in nodes'
+                    );
+                    return;
+                  }
+                  r.pop();
+                  r = r.join('.');
+                }
+                e.data.target = r;
+                t.add(e);
+              }
+            });
+            this.runLayouts();
+            t.on('click', 'node', function (t) {
+              var r = t.target;
+              var n = { id: r.data().id, in: [], out: [] };
+              var o = r.connectedEdges();
+              for (var a = 0; a < o.length; a += 1) {
+                var s = o[a].data();
+                if (r.data().id === s.source) {
+                  n.out.push(s.target);
+                } else {
+                  n.in.push(s.source);
+                }
+              }
+              var c = n.id.split('/')[1];
+              if (!c || !c.endsWith('.tf')) {
+                if (['basename', 'fname'].includes(r.data().type)) {
+                  e.selectedNode = '';
+                  e.unhighlightNodePaths(r);
+                  return;
+                }
+                e.selectedNode = n.id;
+                e.highlightNodePaths(r);
+                e.$emit('getNode', n.id);
+              }
+            });
+            t.on('mouseover', 'node', function (t) {
+              var r = t.target;
+              if (!e.selectedNode) {
+                e.highlightNodePaths(r);
+              }
+            });
+            t.on('mouseout', 'node', function (t) {
+              var r = t.target;
+              if (!e.selectedNode) {
+                e.unhighlightNodePaths(r);
+              }
+            });
+          },
+          highlightNodePaths: function (e) {
+            var t = this.$refs.cy.instance;
+            if (
+              !['basename', 'fname'].includes(e.data().type) &&
+              (!e.isParent() || e.data().type === 'module')
+            ) {
+              t.elements()
+                .difference(e.outgoers().union(e.incomers()))
+                .filter(function (e) {
+                  if (!['basename', 'fname'].includes(e.data().type)) {
+                    return e;
+                  }
+                })
+                .not(e.ancestors())
+                .addClass('semitransp');
+              e.neighborhood()
+                .union(e.neighborhood().parent())
+                .addClass('visible');
+              e.incomers().addClass('dashed');
+            }
+          },
+          unhighlightNodePaths: function (e) {
+            var t = this.$refs.cy.instance;
+            if (!e.data().type.includes.fname) {
+              t.elements()
+                .removeClass('semitransp')
+                .removeClass('visible')
+                .removeClass('dashed');
+            }
+          },
+          saveGraph: function () {
+            var e = this.$refs.cy.instance;
+            var t = e.svg({ scale: 0.1, full: true });
+            var r = new Blob([t], { type: 'image/svg+xml;charset=utf-8' });
+            Object(R.saveAs)(r, 'rover.svg');
+          },
+          runLayouts: function () {
+            var e = this.$refs.cy.instance;
+            e.layout({
+              name: 'klay',
+              nodeDimensionsIncludeLabels: true,
+              klay: { direction: 'RIGHT', borderSpacing: 100, spacing: 30 },
+            }).run();
+          },
+        },
+        mounted: function () {
+          var e = this;
+          if (typeof graph === 'undefined') {
+            v.a.get('/api/graph').then(function (t) {
+              e.graph = t.data;
+              e.renderGraph();
+            });
+          } else {
+            this.graph = graph;
+            this.renderGraph();
+          }
+        },
+      };
+      var D = G;
+      r('b44b');
+      r('d914');
+      var S = Object(d.a)(D, x, k, false, null, '11c2dcd0', null);
+      var E = S.exports;
+      var M = function () {
+        var e = this;
+        var t = e.$createElement;
+        var r = e._self._c || t;
+        return r(
+          'fieldset',
+          [
+            r('legend', [e._v('Resources')]),
+            r('File'),
+            e._l(e.map.root, function (t, n) {
+              return r(
+                'div',
+                { key: n },
+                [
+                  r('File', {
+                    attrs: { fileName: n, resources: t.children },
+                    on: { selectResource: e.selectResource },
+                  }),
+                ],
+                1
+              );
+            }),
+          ],
+          2
+        );
+      };
+      var V = [];
+      var A = function () {
+        var e = this;
+        var t = e.$createElement;
+        var r = e._self._c || t;
+        if (e.fileName) {
+          return r(
+            'div',
+            { staticClass: 'file' },
+            [
+              r(
+                'div',
+                {
+                  staticClass: 'row',
+                  on: {
+                    click: function (t) {
+                      e.showChildren = !e.showChildren;
+                    },
+                  },
+                },
+                [
+                  r('img', {
+                    staticClass: 'file-expand-icon',
+                    attrs: { src: e.expandIcons[e.expandIcon] },
+                  }),
+                  r('div', { staticClass: 'col-11 file-name' }, [
+                    r('strong', { staticClass: 'text-lowercase' }, [
+                      e._v(e._s(e.fileName)),
+                    ]),
+                  ]),
+                ]
+              ),
+              e._l(e.sortedResources, function (t) {
+                return [
+                  r(
+                    'transition-group',
+                    { key: t[0], attrs: { name: 'resources' } },
+                    [
+                      e.showChildren
+                        ? r('resource-card', {
+                            key: t[0],
+                            attrs: {
+                              id: t[0],
+                              content: t[1],
+                              isChild: false,
+                              'handle-click': e.selectResource,
+                            },
+                          })
+                        : e._e(),
+                    ],
+                    1
+                  ),
+                ];
+              }),
+            ],
+            2
+          );
+        } else {
+          return e._e();
+        }
+      };
+      var F = [];
+      r('4e82');
+      r('4fad');
+      var L = function () {
+        var e = this;
+        var t = e.$createElement;
+        var r = e._self._c || t;
+        return r(
+          'div',
+          {
+            staticClass: 'card resource-main',
+            class: [
+              e.isChild ? 'child' : '',
+              'resource-card ' + e.content.type,
+              e.content.change_action != null ? e.content.change_action : '',
+              e.content.change_action != null ? '' : 'resource-type-card',
+            ],
+          },
+          [
+            r(
+              'div',
+              {
+                staticClass: 'row',
+                on: {
+                  click: function (t) {
+                    return e.handleClick(e.id);
+                  },
+                },
+              },
+              [
+                r('div', { staticClass: 'col col-6 resource-col' }, [
+                  r(
+                    'p',
+                    {
+                      staticClass: 'is-small resource-action',
+                      on: {
+                        click: function (t) {
+                          e.showChildren = !e.showChildren;
+                        },
+                      },
+                    },
+                    [
+                      r('img', {
+                        staticClass: 'multi-tag resource-action-icon',
+                        attrs: { src: e.expandIcons[e.expandIcon] },
+                      }),
+                    ]
+                  ),
+                  r('p', { staticClass: 'resource-name' }, [
+                    e._v(' ' + e._s(e.content.name) + ' '),
+                  ]),
+                ]),
+                r(
+                  'div',
+                  { staticClass: 'col col-4' },
+                  [
+                    e.resourceProvider
+                      ? [
+                          e.providerIcon[e.resourceProvider]
+                            ? r('img', {
+                                staticClass: 'provider-icon',
+                                attrs: {
+                                  src: e.providerIcon[e.resourceProvider],
+                                },
+                              })
+                            : r(
+                                'span',
+                                {
+                                  staticClass: 'tag is-small provider-icon-tag',
+                                },
+                                [e._v(' ' + e._s(e.resourceProvider[0]) + ' ')]
+                              ),
+                        ]
+                      : e._e(),
+                    r('p', { staticClass: 'provider-resource-name' }, [
+                      e._v(
+                        ' ' +
+                          e._s(
+                            e.resourceProvider ? e.resourceProvider + '.' : ''
+                          ) +
+                          e._s(
+                            e.content.resource_type
+                              ? e.content.resource_type
+                              : ''
+                          ) +
+                          ' '
+                      ),
+                    ]),
+                  ],
+                  2
+                ),
+                e.content.line
+                  ? r('div', { staticClass: 'col col-2 text-right' }, [
+                      e._v(' Line: # '),
+                      r('span', { staticClass: 'line-number' }, [
+                        e._v(e._s(e.content.line)),
+                      ]),
+                    ])
+                  : e._e(),
+              ]
+            ),
+            e._l(e.sortedResources, function (t) {
+              return [
+                r(
+                  'transition-group',
+                  { key: t[0], attrs: { name: 'resources' } },
+                  [
+                    e.showChildren
+                      ? r('resource-card', {
+                          key: t[0],
+                          attrs: {
+                            id: t[0],
+                            content: t[1],
+                            isChild: false,
+                            'handle-click': e.handleClick,
+                          },
+                        })
+                      : e._e(),
+                  ],
+                  1
+                ),
+              ];
+            }),
+          ],
+          2
+        );
+      };
+      var B = [];
+      var z = {
+        name: 'ResourceCard',
+        props: {
+          id: String,
+          content: Object,
+          isChild: Boolean,
+          handleClick: Function,
+        },
+        data: function () {
+          return {
+            showChildren: false,
+            providerIcon: {
+              aws: r('a06f'),
+              azure: r('e73c'),
+              gcp: r('6c11'),
+              helm: r('d833'),
+              kubernetes: r('133a'),
+            },
+            resourceChangeIcons: {
+              create: r('6b56'),
+              read: null,
+              'no-op': null,
+              update: r('5ba8'),
+              delete: r('5daf'),
+              replace: r('b40f'),
+            },
+            expandIcons: { null: null, expand: r('32cb'), collapse: r('c88e') },
+          };
+        },
+        methods: {},
+        computed: {
+          expandIcon: function () {
+            if (this.content.children) {
+              if (this.showChildren) {
+                return 'collapse';
+              } else {
+                return 'expand';
+              }
+            } else {
+              return null;
+            }
+          },
+          sortedResources: function () {
+            if (this.content.children) {
+              var e = Object.entries(this.content.children).sort(function (
+                e,
+                t
+              ) {
+                return e[1].line - t[1].line;
+              });
+              return e;
+            }
+            return null;
+          },
+          resourceProvider: function () {
+            if (this.content.provider) {
+              return this.content.provider;
+            } else if (this.content.resource_type) {
+              return this.content.resource_type.split('_')[0];
+            } else {
+              return null;
+            }
+          },
+        },
+      };
+      var W = z;
+      r('9c3a');
+      var H = Object(d.a)(W, L, B, false, null, '2a9b2d96', null);
+      var J = H.exports;
+      var U = {
+        name: 'File',
+        components: { ResourceCard: J },
+        props: { fileName: String, resources: Object },
+        data: function () {
+          return {
+            showChildren: true,
+            expandIcons: { expand: r('32cb'), collapse: r('c88e') },
+          };
+        },
+        methods: {
+          selectResource: function (e) {
+            this.$emit('selectResource', e);
+          },
+        },
+        computed: {
+          expandIcon: function () {
+            if (this.showChildren) {
+              return 'collapse';
+            } else {
+              return 'expand';
+            }
+          },
+          sortedResources: function () {
+            var e = Object.entries(this.resources).sort(function (e, t) {
+              return e[1].line - t[1].line;
+            });
+            return e;
+          },
+        },
+      };
+      var q = U;
+      r('95b3');
+      var K = Object(d.a)(q, A, F, false, null, '3d7b7730', null);
+      var Q = K.exports;
+      var X = {
+        name: 'Explorer',
+        components: { File: Q },
+        data: function () {
+          return { map: {} };
+        },
+        methods: {
+          selectResource: function (e) {
+            this.$emit('selectResource', e);
+          },
+        },
+        mounted: function () {
+          var e = this;
+          if (typeof map === 'undefined') {
+            v.a.get('/api/map').then(function (t) {
+              e.map = t.data;
+            });
+          } else {
+            this.map = map;
+          }
+        },
+      };
+      var Y = X;
+      r('6a11');
+      var Z = Object(d.a)(Y, M, V, false, null, '1cda27d5', null);
+      var ee = Z.exports;
+      var te = {
+        name: 'App',
+        metaInfo: { title: 'Rover | Terraform Visualization' },
+        components: { MainNav: f, Graph: E, Explorer: ee, ResourceDetail: w },
+        data: function () {
+          return { displayGraph: true, resourceID: '' };
+        },
+        methods: {
+          saveGraph: function () {
+            this.$refs.filegraph.saveGraph();
+          },
+          selectResource: function (e) {
+            this.resourceID = e;
+          },
+        },
+      };
+      var re = te;
+      r('5fc7');
+      var ne = Object(d.a)(re, o, a, false, null, '5cf12920', null);
+      var oe = ne.exports;
+      var ae = r('3a6f');
+      var se = r.n(ae);
+      var ce = r('58ca');
+      n.default.use(se.a);
+      n.default.use(ce.a);
+      n.default.config.productionTip = false;
+      new n.default({
+        render: function (e) {
+          return e(oe);
+        },
+      }).$mount('#app');
+    },
+    '579a': function (e, t, r) {},
+    '5ba8': function (e, t, r) {
+      e.exports = './img/alert-triangle.d88bf755.svg';
+    },
+    '5daf': function (e, t, r) {
+      e.exports = './img/minus.f2deefda.svg';
+    },
+    '5fc7': function (e, t, r) {
+      'use strict';
+      r('08f7');
+    },
+    '6a11': function (e, t, r) {
+      'use strict';
+      r('1b55');
+    },
+    '6b56': function (e, t, r) {
+      e.exports = './img/plus.b121a385.svg';
+    },
+    '6c11': function (e, t, r) {
+      e.exports = './img/gcp.2bdb5143.png';
+    },
+    '95b3': function (e, t, r) {
+      'use strict';
+      r('4294');
+    },
+    '9c3a': function (e, t, r) {
+      'use strict';
+      r('46da');
+    },
+    a06f: function (e, t, r) {
+      e.exports = './img/aws.082444af.png';
+    },
+    aed1: function (e, t, r) {},
+    b40f: function (e, t, r) {
+      e.exports = './img/refresh-cw.286819b2.svg';
+    },
+    b44b: function (e, t, r) {
+      'use strict';
+      r('579a');
+    },
+    bdb6: function (e, t, r) {
+      'use strict';
+      r('ca51');
+    },
+    c88e: function (e, t, r) {
+      e.exports = './img/arrow-up-circle.c7e27cfe.svg';
+    },
+    ca51: function (e, t, r) {},
+    d833: function (e, t, r) {
+      e.exports = './img/helm.0d1950ff.png';
+    },
+    d914: function (e, t, r) {
+      'use strict';
+      r('db2d');
+    },
+    db2d: function (e, t, r) {},
+    e73c: function (e, t, r) {
+      e.exports = './img/azure.0386fb3d.png';
+    },
+  };
+  var n = {};
+  var o = { app: 0 };
+  var a = [];
+  s.m = e;
+  s.c = n;
+  s.d = function (e, t, r) {
+    if (!s.o(e, t)) {
+      Object.defineProperty(e, t, { enumerable: true, get: r });
+    }
+  };
+  s.r = function (e) {
+    if (typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+      Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' });
+    }
+    Object.defineProperty(e, '__esModule', { value: true });
+  };
+  s.t = function (e, t) {
+    if (1 & t) {
+      e = s(e);
+    }
+    if (8 & t) {
+      return e;
+    }
+    if (4 & t && typeof e === 'object' && e && e.__esModule) {
+      return e;
+    }
+    var r = Object.create(null);
+    s.r(r);
+    Object.defineProperty(r, 'default', { enumerable: true, value: e });
+    if (2 & t && typeof e != 'string') {
+      for (var n in e) {
+        s.d(
+          r,
+          n,
+          function (t) {
+            return e[t];
+          }.bind(null, n)
+        );
+      }
+    }
+    return r;
+  };
+  s.n = function (e) {
+    var t =
+      e && e.__esModule
+        ? function () {
+            return e.default;
+          }
+        : function () {
+            return e;
+          };
+    s.d(t, 'a', t);
+    return t;
+  };
+  s.o = function (e, t) {
+    return Object.prototype.hasOwnProperty.call(e, t);
+  };
+  s.p = '/';
+  var c = (window.webpackJsonp = window.webpackJsonp || []);
+  var i = c.push.bind(c);
+  c.push = t;
+  c = c.slice();
+  for (var l = 0; l < c.length; l++) {
+    t(c[l]);
+  }
+  var d = i;
+  a.push([0, 'chunk-vendors']);
+  r();
+})();

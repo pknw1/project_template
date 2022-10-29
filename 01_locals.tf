@@ -1,0 +1,3 @@
+/*  template locals.tf
+    use this file to contain dyanmic variables calculated at runtime
+*/

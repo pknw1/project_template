@@ -1,0 +1,6 @@
+/*  providers.tf
+    used to define and configure terraform providers used in
+    this module
+
+    also contains some provider ferature blocks as required
+*/

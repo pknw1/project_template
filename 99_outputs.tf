@@ -1,0 +1,3 @@
+/*  outputs.tf
+    runtime delivered valaues output for the user
+*/
