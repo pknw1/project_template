@@ -51,8 +51,10 @@ This code should be applied as a terraform module as shown
 - [ ] Authentication
 - [ ] Subscriptions
 ---
-<iframe src="./documentation/rover/index.html">
-</iframe>
+
+## Analysis
+[Terraform Visualisation](./documentation/rover/)
+
 
 ## Inputs
 ## Inputs

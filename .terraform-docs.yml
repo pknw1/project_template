@@ -25,9 +25,11 @@ content: |-
   ---
   {{ include "./documentation/maintenence.md" }}
   ---
-  <iframe src="./documentation/rover/index.html">
-  </iframe>
-  
+ 
+  ## Analysis
+  [Terraform Visualisation](./documentation/rover/)
+ 
+
   ## Inputs
   {{ .Inputs }}
 
